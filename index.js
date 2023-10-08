@@ -55,7 +55,7 @@ files.forEach((f) => {
 console.log(table.toString());
 
 app.listen(3000, () => {
-  console.log(`Connected To Link: http://localhost:3000`); 
+  console.log(`Connected To Link: http://localhost:3000`);
   
 });
 //========================| ErrorsReturn |==============================
