@@ -1,5 +1,5 @@
 const { connect, set } = require('mongoose');
-const MongoDBURL = 'YOUR_MONGODB_URL'
+const MongoDBURL = 'YOUR_MONGODBURL'
 
 async function connectToDatabase() {
     try {

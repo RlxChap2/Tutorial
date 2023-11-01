@@ -9,19 +9,17 @@ readdirSync("./handlers").forEach((handler) => {
 });
 module.exports.Client = client;
 
-
-
 // Dashboard
 const express = require("express");
 const app = express();
-const ascii = require('ascii-table');
-const cookieParser = require('cookie-parser');
+const ascii = require("ascii-table");
+const cookieParser = require("cookie-parser");
 const urlencodedParser = express.urlencoded({ extended: true });
-const bodyParser = require('body-parser');
-const path = require('path');
+const bodyParser = require("body-parser");
+const path = require("path");
 const table = new ascii("Website").setJustify();
 
-app.enable('trust proxy');
+app.enable("trust proxy");
 app.set("etag", false);
 app.set("views", __dirname);
 app.set("view engine", "ejs");
@@ -56,8 +54,24 @@ console.log(table.toString());
 
 app.listen(3000, () => {
   console.log(`Connected To Link: http://localhost:3000`);
-  
 });
+
+
+
+
+
+// Modal
+client.on(Events.InteractionCreate, async(interaction) => {
+  if(interaction.isModalSubmit()) {
+    if(interaction.customId === "nmodal") {
+      const TextField = interaction.fields.getTextInputValue("favtext")
+      const TextField2 = interaction.fields.getTextInputValue("hp")
+
+      await interaction.reply({ content: `${TextField}, ${TextField2}`, ephemeral: true })
+    }
+  }
+})
+
 //========================| ErrorsReturn |==============================
 process.on("uncaughtException", (error) => {
   return console.error(error);
