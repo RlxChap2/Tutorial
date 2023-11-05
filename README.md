@@ -56,7 +56,7 @@ const MongoDBURL = "ضيف رابط الداتا حقتك هنا";
 
 ![Eissa](https://media.discordapp.net/attachments/1105785961536827394/1156635096984592455/Screenshot_2023-09-25_213623.png?ex=6515afe0&is=65145e60&hm=da5e53a42af9004884e35cb5e6e6aed97d2e1027f6afb4d1c39645af6397aca0&=&width=1336&height=671)
 
-## مواقع روابط التواصل الاجتماعي 🌐
+## روابط مواقع التواصل الاجتماعي 🌐
 
 - ### [Discord](https://discord.gg/6CuMuv5Yzg)
 - ### [Youtube](https://www.youtube.com/@Mr_HrS)
