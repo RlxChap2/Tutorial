@@ -1,4 +1,3 @@
-const {} = require("discord.js");
 const client = require("../../index").Client;
 
 module.exports = {

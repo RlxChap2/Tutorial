@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, Events } = require("discord.js");
-const { token, prefix } = require("./config.json");
+const { token, prefix, clientId, clientSecret } = require("./config.json");
 const client = new Client({
   intents: [Object.keys(GatewayIntentBits)],
 });
@@ -18,6 +18,10 @@ const urlencodedParser = express.urlencoded({ extended: true });
 const bodyParser = require("body-parser");
 const path = require("path");
 const table = new ascii("Website").setJustify();
+// Login
+const session = require("express-session");
+const passport = require("passport");
+var DiscordStrategy = require("passport-discord").Strategy;
 
 app.enable("trust proxy");
 app.set("etag", false);
@@ -25,10 +29,41 @@ app.set("views", __dirname);
 app.set("view engine", "ejs");
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "Dashboard")));
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.json());
 app.use(urlencodedParser);
+app.use(express.json());
+
+// passport Config
+app.use(
+  session({
+    secret:
+      "Tutorial#asjdkasassa1!##@!#!#$#@!#(*#(@!#!@HSJJJJAAAALSJAJLDLKAL",
+    resave: false,
+    saveUninitialized: false,
+    name: "Tutorial2023Web",
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(
+  new DiscordStrategy(
+    {
+      clientID: clientId,
+      clientSecret: clientSecret,
+      callbackURL: "http://localhost:3000/callback",
+      scope: ["identify", "guilds"],
+    },
+    async (accessToken, refreshToken, profile, done) => {
+      return done(null, profile);
+    }
+  )
+);
+
+passport.serializeUser((user, done) => done(null, user));
+passport.deserializeUser((user, done) => done(null, user));
 
 const files = readdirSync("./Dashboard/DashHandler").filter((f) =>
   f.endsWith(".js")
@@ -56,21 +91,20 @@ app.listen(3000, () => {
   console.log(`Connected To Link: http://localhost:3000`);
 });
 
-
-
-
-
 // Modal
-client.on(Events.InteractionCreate, async(interaction) => {
-  if(interaction.isModalSubmit()) {
-    if(interaction.customId === "nmodal") {
-      const TextField = interaction.fields.getTextInputValue("favtext")
-      const TextField2 = interaction.fields.getTextInputValue("hp")
+client.on(Events.InteractionCreate, async (interaction) => {
+  if (interaction.isModalSubmit()) {
+    if (interaction.customId === "nmodal") {
+      const TextField = interaction.fields.getTextInputValue("favtext");
+      const TextField2 = interaction.fields.getTextInputValue("hp");
 
-      await interaction.reply({ content: `${TextField}, ${TextField2}`, ephemeral: true })
+      await interaction.reply({
+        content: `${TextField}, ${TextField2}`,
+        ephemeral: true,
+      });
     }
   }
-})
+});
 
 //========================| ErrorsReturn |==============================
 process.on("uncaughtException", (error) => {
