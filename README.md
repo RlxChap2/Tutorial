@@ -37,9 +37,9 @@ CLIENT_ID=CLIENT_ID
 
 `> .env`
 
-```js
-MONGO_URL=MONGODB_URL;
-PORT=3005;
+```env
+MONGO_URL=MONGODB_URL
+PORT=3005
 ```
 
 ## شكر خاص ❤️
@@ -50,7 +50,7 @@ PORT=3005;
 
 - ### و احصائيات القناة زادت و ذا بفضل الله ثم فضلكم و دعمكم لي ف حبيت اشكركم شكر بسيط ❤️🫡
 
-![HrS-Status](https://media.discordapp.net/attachments/1105785961536827394/1160613855030956123/image.png?ex=65354ce2&is=6522d7e2&hm=f6a83846a95e63e6d0b3d2e6ca66ffb9135c2d823a0bf140321dc3b65303c5b6&=&width=1193&height=671)
+![HrS-Status](https://media.discordapp.net/attachments/1105785961536827394/1173560899315974205/image.png?ex=656466c2&is=6551f1c2&hm=4af06bbddca4089309940e58e0e5f6746741ccacad3f788d95ab0242d058463a&=&width=1193&height=671)
 
 - ### و شكر خاص لعيسى و على مفاجئتة لي بدعمة 🫡
 
