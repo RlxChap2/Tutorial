@@ -1,6 +1,0 @@
-{
-  "token": "BOT_TOKEN",
-  "clientSecret": "CLIENT_SECRET",
-  "clientId": "CLIENT_ID",
-  "prefix": "!"
-}
