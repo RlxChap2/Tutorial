@@ -14,6 +14,9 @@ const path = require("path");
 const { connect, set } = require("mongoose");
 const MongoDBURL = process.env.MONGO_URL;
 
+
+
+// =======-> Database
 async function connectToDatabase() {
   try {
     await connect(MongoDBURL, {
@@ -31,6 +34,8 @@ async function connectToDatabase() {
   }
 }
 
+
+// =======-> Slash Commands
 async function SlashCommandEvent(client) {
   const commands = [];
   client.commands = new Collection();
@@ -79,6 +84,9 @@ async function SlashCommandEvent(client) {
   });
 }
 
+
+
+// =======-> Events
 async function EventsHandler(client) {
   const eventDir = path.join(__dirname, "../events");
   readdirSync(eventDir).forEach((folder) => {
@@ -102,6 +110,9 @@ async function EventsHandler(client) {
   console.log(EventsTable.toString());
 }
 
+
+
+// =======-> Express
 async function Express(client) {
   const express = require("express");
   const app = express();
@@ -183,6 +194,9 @@ async function Express(client) {
   });
 }
 
+
+
+// =======-> Run to Build the environment
 async function Run(client) {
   connectToDatabase();
   SlashCommandEvent(client);
