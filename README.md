@@ -52,7 +52,7 @@ PORT=3005
 6. **تشغل البوت من علامة ▶️**
 
 - **توضيح لأضافة البروجكت في Replit 💡**
-  ![Replit](https://imgur.com/eyJdF8V)
+  ![Replit](https://cdn.discordapp.com/attachments/1105785961536827394/1175639337405263945/ProdactsTut_1.gif?ex=656bf674&is=65598174&hm=e254e8087b2015ae117247060fb5715619094ffb2f3abe26b25a8e5a016a4e0b&)
 
 ## شكر خاص ❤️
 
