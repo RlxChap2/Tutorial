@@ -64,9 +64,15 @@ PORT=3005
 
 ![HrS-Status](https://media.discordapp.net/attachments/1105785961536827394/1175634800095277116/status-1jpg.jpg?ex=656bf23a&is=65597d3a&hm=345592467a6f3ebd8fa8c907c2ff3d05048d97e7a5fe25641fa5194973a090e8&=&width=1193&height=671)
 
+## Partner 🤝
+
 - ### و شكر خاص لعيسى و على مفاجئتة لي بدعمة 🫡
 
 ![Eissa](https://media.discordapp.net/attachments/1105785961536827394/1156635096984592455/Screenshot_2023-09-25_213623.png?ex=6515afe0&is=65145e60&hm=da5e53a42af9004884e35cb5e6e6aed97d2e1027f6afb4d1c39645af6397aca0&=&width=1336&height=671)
+
+- ### و شكر خاص لـ ZombieX و على مفاجئتة لي بدعمة 🫡
+
+![ZombieX](https://media.discordapp.net/attachments/1105785961536827394/1180047302040227890/image.png?ex=657bffb1&is=65698ab1&hm=c29a35d8359c6008d31e6fa5d2e8c76bec03211af49fca7e69aab4ecbefe6112&=&format=webp&quality=lossless)
 
 ## روابط مواقع التواصل الاجتماعي 🌐
 
