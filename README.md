@@ -6,6 +6,7 @@
 	<br />
 	<p>
 		<a href="https://discord.gg/6CuMuv5Yzg"><img src="https://img.shields.io/discord/977544174125609010?logo=discord&color=5865F2" alt="Discord server" /></a>
+		<a href="https://youtube.com/@Mr_HrS"><img src="https://img.shields.io/youtube/channel/subscribers/UCVmz5jIwiQEXv0sGw1fPIbQ" alt="Youtube Subscribers" /></a>
 		<a href="https://paypal.me/MMahmoud345?country.x=SA&locale.x=ar_EG"><img src="https://img.shields.io/badge/-donate-blue.svg?logo=paypal&style=for-the-badge" alt="NPM downloads" /></a>
 	</p>
 </div>
