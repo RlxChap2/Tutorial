@@ -7,25 +7,29 @@ module.exports = {
     delete require.cache[require.resolve("../views/index.ejs")];
 
     if (client) {
-      passport.authenticate("discord", { failureRedirect: "/" }, (err, user) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        
-        if (!user) {
-          return res.redirect("/");
-        }
-
-        req.logIn(user, (err) => {
+      passport.authenticate(
+        "discord",
+        { failureRedirect: "/" },
+        (err, user) => {
           if (err) {
             console.error(err);
             return;
           }
-          // User is authenticated
-          res.redirect("/");
-        });
-      })(req, res, next);
+
+          if (!user) {
+            return res.redirect("/");
+          }
+
+          req.logIn(user, (err) => {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            // User is authenticated
+            res.redirect("/");
+          });
+        }
+      )(req, res, next);
     } else {
       console.error("Client object is null");
     }

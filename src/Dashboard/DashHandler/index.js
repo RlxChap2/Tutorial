@@ -10,6 +10,7 @@ module.exports = {
       TotalGuilds: client.guilds.cache.size,
     };
 
-    res.render("./Dashboard/views/index.ejs", args);
+    res.render("../Dashboard/views/index.ejs", args);
   },
 };
+  

@@ -7,6 +7,6 @@ module.exports = {
 
     res.redirect("/callback");
 
-    res.render("./Dashboard/views/index.ejs");
+    res.render("../Dashboard/views/index.ejs");
   },
 };

@@ -14,8 +14,6 @@ const path = require("path");
 const { connect, set } = require("mongoose");
 const MongoDBURL = process.env.MONGO_URL;
 
-
-
 // =======-> Database
 async function connectToDatabase() {
   try {
@@ -33,7 +31,6 @@ async function connectToDatabase() {
     console.error(error);
   }
 }
-
 
 // =======-> Slash Commands
 async function SlashCommandEvent(client) {
@@ -84,8 +81,6 @@ async function SlashCommandEvent(client) {
   });
 }
 
-
-
 // =======-> Events
 async function EventsHandler(client) {
   const eventDir = path.join(__dirname, "../events");
@@ -109,8 +104,6 @@ async function EventsHandler(client) {
   });
   console.log(EventsTable.toString());
 }
-
-
 
 // =======-> Express
 async function Express(client) {
@@ -153,8 +146,8 @@ async function Express(client) {
   passport.use(
     new DiscordStrategy(
       {
-        clientID: clientId,
-        clientSecret: clientSecret,
+        clientID: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
         callbackURL: "http://localhost:3000/callback",
         scope: ["identify", "guilds"],
       },
@@ -167,12 +160,13 @@ async function Express(client) {
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((user, done) => done(null, user));
 
-  const files = readdirSync("./Dashboard/DashHandler").filter((f) =>
+  const dashDir = path.join(__dirname, "../Dashboard");
+  const files = readdirSync(path.join(dashDir, "DashHandler")).filter((f) =>
     f.endsWith(".js")
   );
   files.forEach((f) => {
     try {
-      const file = require(`./Dashboard/DashHandler/${f}`);
+      const file = require(path.join(dashDir, "DashHandler", f));
       if (file && file.name && file.run) {
         app.get(file.name, file.run);
         if (file.run2) {
@@ -194,13 +188,12 @@ async function Express(client) {
   });
 }
 
-
-
 // =======-> Run to Build the environment
 async function Run(client) {
   connectToDatabase();
   SlashCommandEvent(client);
   EventsHandler(client);
+  Express(client);
 }
 
 module.exports = { EventsHandler, SlashCommandEvent, connectToDatabase, Run };
