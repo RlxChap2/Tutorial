@@ -76,6 +76,10 @@ PORT=3005
 
 ![ZombieX](https://media.discordapp.net/attachments/1105785961536827394/1180047302040227890/image.png?ex=657bffb1&is=65698ab1&hm=c29a35d8359c6008d31e6fa5d2e8c76bec03211af49fca7e69aab4ecbefe6112&=&format=webp&quality=lossless)
 
+## Star History ⭐
+
+[![Star History Chart](https://api.star-history.com/svg?repos=RlxChap2/Tutorial&type=Date)](https://star-history.com/#RlxChap2/Tutorial&Date)
+
 ## روابط مواقع التواصل الاجتماعي 🌐
 
 - ### [Discord](https://discord.gg/6CuMuv5Yzg)
