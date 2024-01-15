@@ -17,11 +17,7 @@ const MongoDBURL = process.env.MONGO_URL;
 // =======-> Database
 async function connectToDatabase() {
   try {
-    await connect(MongoDBURL, {
-      keepAlive: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }).then(async (connection) => {
+    await connect(MongoDBURL).then(async (connection) => {
       await console.log(
         `🟢 | MongoDB connected as ${connection.connections[0].name}`
       );
@@ -110,7 +106,6 @@ async function Express(client) {
   const express = require("express");
   const app = express();
   const cookieParser = require("cookie-parser");
-  const urlencodedParser = express.urlencoded({ extended: true });
   const bodyParser = require("body-parser");
   const WebTable = new ascii("Website").setJustify();
   // Login
@@ -123,11 +118,11 @@ async function Express(client) {
   app.set("views", __dirname);
   app.set("view engine", "ejs");
   app.use(cookieParser());
-  app.use(express.static(path.join(__dirname, "Dashboard")));
+  app.use(express.static(path.join(__dirname, "../Dashboard")));
+  app.use(express.urlencoded({ extended: true }));
   app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
-  app.use(urlencodedParser);
   app.use(express.json());
+  app.use(bodyParser.json());
 
   // passport Config
   app.use(

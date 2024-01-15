@@ -3,9 +3,7 @@ const passport = require("passport");
 
 module.exports = {
   name: "/callback",
-  run: (req, res, next) => {
-    delete require.cache[require.resolve("../views/index.ejs")];
-
+  run: async (req, res, next) => {
     if (client) {
       passport.authenticate(
         "discord",
@@ -26,7 +24,7 @@ module.exports = {
               return;
             }
             // User is authenticated
-            res.redirect("/");
+            res.redirect("/dash");
           });
         }
       )(req, res, next);
